@@ -49,4 +49,30 @@ sum=sum+num[i];
 float average=(float)sum/n;
 printf("Average of numbers is %f\n",average);
 }
+4)#include <stdio.h>
+#include <cs50.h>
+int mode(int a[],int n){
+int maxValue=0,maxCounr=0,I,j;
+for(int I =0;i<n;i++){
+int count=0;
+for(int j=0;j<n;j++){
+if (a[j]==a[i]){
+++count;
+}
+if (count>maxCount){
+maxCount=count;
+maxValue =a[i];
+}}
+return mavValue;
+}
+Int main() {
+int n;
+n= get_ int("Enter value of n:\n");
+  int a[n];
+for(int i=0;i<n;i++){
+a[i]= get_int( "number%i:",i);
+}
+printf("Mode is %d",mode(a,n));
+return 0;
+}
 
