@@ -32,3 +32,21 @@ minimum =min[i;
 printf("Minimum value is %i\n",minimum);
 }
 
+3)#include <stdio.h>
+#include <cs50.h>
+int main() {
+int n;
+n=get_int("How many numbers?\n");
+int num[];
+for(int i=0;i<n;i++){
+num[i]=get_int("Enter number%i\n",i);
+}
+int sum;
+float sum='0';
+for(int i=0;i<n;i++){
+sum=sum+num[i];
+}
+float average=(float)sum/n;
+printf("Average of numbers is %f\n",average);
+}
+
