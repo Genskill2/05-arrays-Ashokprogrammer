@@ -75,4 +75,24 @@ a[i]= get_int( "number%i:",i);
 printf("Mode is %d",mode(a,n));
 return 0;
 }
+5)#include <stdio.h>
+#include <cs50.h>
+Void Primefactors(int num){
+int count;
+for(count=0;num>1;count++){
+while(num%count==0){
+Printf("%d",count);
+num=num/count;
+}
+}
+Printf("\n");
+}
+int main() {
+int num;
+num=get_int("Enter value of n:");
+
+Printfactors(num);
+return 0;
+}
+
 
