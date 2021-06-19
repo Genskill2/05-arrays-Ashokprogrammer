@@ -1,4 +1,4 @@
-#include <stdio.h>
+1)#include <stdio.h>
 #include <cs50.h>
 int main() {
 int n;
@@ -15,5 +15,20 @@ maximum=max[i];
 }
 Printf("maximum value is %i\n",maximum);
 }
-
+2)#include <stdio.h>
+#include <cs50.h>
+int main() {
+int n;
+n=get_int("Enter value of n:\n");
+int min[];
+for(int i=0;i<n;i++){
+min[i]=get_int("Enter value of number%i:\n",i);
+}
+int minimum=min[0];
+for(int i=0;i<n;i++){
+if(min[i]<minimum){
+minimum =min[i;
+}}
+printf("Minimum value is %i\n",minimum);
+}
 
