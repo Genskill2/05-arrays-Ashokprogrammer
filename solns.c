@@ -20,14 +20,14 @@ Printf("maximum value is %i\n",maximum);
 int main() {
 int n;
 n=get_int("Enter value of n:\n");
-int min[];
+int min[n];
 for(int i=0;i<n;i++){
 min[i]=get_int("Enter value of number%i:\n",i);
 }
 int minimum=min[0];
 for(int i=0;i<n;i++){
 if(min[i]<minimum){
-minimum =min[i;
+minimum =min[i];
 }}
 printf("Minimum value is %i\n",minimum);
 }
@@ -37,12 +37,11 @@ printf("Minimum value is %i\n",minimum);
 int main() {
 int n;
 n=get_int("How many numbers?\n");
-int num[];
+int num[n];
 for(int i=0;i<n;i++){
 num[i]=get_int("Enter number%i\n",i);
 }
-int sum;
-float sum='0';
+int sum=0;
 for(int i=0;i<n;i++){
 sum=sum+num[i];
 }
@@ -52,7 +51,7 @@ printf("Average of numbers is %f\n",average);
 4)#include <stdio.h>
 #include <cs50.h>
 int mode(int a[],int n){
-int maxValue=0,maxCounr=0,I,j;
+int maxValue=0,maxCount=0,i,j;
 for(int I =0;i<n;i++){
 int count=0;
 for(int j=0;j<n;j++){
@@ -63,9 +62,9 @@ if (count>maxCount){
 maxCount=count;
 maxValue =a[i];
 }}
-return mavValue;
+return maxValue;
 }
-Int main() {
+int main() {
 int n;
 n= get_ int("Enter value of n:\n");
   int a[n];
