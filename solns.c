@@ -5,7 +5,7 @@ int n;
 int max[n];
 n=get_int("Enter the value of n:\n");
 for(int i=0;i<n;i++){
-max[¡]=get_int("Enter number%i:");
+max[¡]=get_int("Enter number%i:",i);
 }
 int maximum=max[0];
 for(int i=0;i<n;i++){
