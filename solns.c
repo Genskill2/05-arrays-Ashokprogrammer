@@ -1,97 +1,137 @@
 #include <stdio.h>
-#include <cs50.h>
-int main() {
-int n;
-int max[n];
-n=get_int("Enter the value of n:\n");
-for(int i=0;i<n;i++){
-max[¡]=get_int("Enter number%i:",i);
-}
-int maximum=max[0];
-for(int i=0;i<n;i++){
-if(max[i]>maximum){
-maximum=max[i];
+#include <string.h>
+/*1.max function*/
+int max(int array[],int num){
+int max=array[0];
+for(int i=0;i<num;i++){
+if(max<array[i]){
+max=array[i];
 }
 }
-Printf("maximum value is %i\n",maximum);
+return max;
 }
-2)#include <stdio.h>
-#include <cs50.h>
-int main() {
-int n;
-n=get_int("Enter value of n:\n");
-int min[n];
-for(int i=0;i<n;i++){
-min[i]=get_int("Enter value of number%i:\n",i);
+/*2.min function*/
+
+int min(int array[],int num){
+int min=array[0];
+for(int i=0;i<num;i++){
+if(min>array[i]){
+min = array[i];
+} 
 }
-int minimum=min[0];
-for(int i=0;i<n;i++){
-if(min[i]<minimum){
-minimum =min[i];
-}}
-printf("Minimum value is %i\n",minimum);
+return min;
+}
+/*3.average function */
+float average(int array[],int num){
+    float sum = 0;
+    for (int i=0;i<num;i++){
+    sum+=array[i];
+    }
+    return sum/num;
+    }
+/* 4.mode function */
+int mode(int array[],int num){
+int counts[num];
+int count = 0;
+for(int i=0;i<num; i++){
+count =1 ;
+if(array[i]!=-100){
+for(int j=i+1;j<num;j++){
+if(array[i]==array[j]){
+count++;
+array[j]=-100;
+}
+}
+counts[i]=count;
+}else{
+counts[i] = 0;
+}
+}
+int max_count_value=max (counts,num);
+for(int i=0;i<num;i++){
+if(max_count_value==counts[i]){
+return array[i];
+}
+}
+}
+/*5.factors function */
+
+int factors(int num,int ret[]){
+memset(ret,0,100);
+int index = 0;
+int count = 0;
+int temp = num;
+while (temp%2==0){
+ret[index] = 2;
+index++;
+temp = temp/2;
+}
+for (int i=3;i<=num/2;i=i+2){
+while (temp%i==0){
+ret[index] = i;
+index++;
+temp =temp/i;
+}
+}
+if(temp>2){
+ret[index]=temp;
+}
+for(int j=0;j<100;j++){
+if(ret[j]!=0){
+count++;
+}else{
+break;
+}
+}
+return count;
 }
 
-3)#include <stdio.h>
-#include <cs50.h>
-int main() {
-int n;
-n=get_int("How many numbers?\n");
-int num[n];
-for(int i=0;i<n;i++){
-num[i]=get_int("Enter number%i\n",i);
-}
-int sum=0;
-for(int i=0;i<n;i++){
-sum=sum+num[i];
-}
-float average=(float)sum/n;
-printf("Average of numbers is %f\n",average);
-}
-4)#include <stdio.h>
-#include <cs50.h>
-int mode(int a[],int n){
-int maxValue=0,maxCount=0,i,j;
-for(int I =0;i<n;i++){
-int count=0;
-for(int j=0;j<n;j++){
-if (a[j]==a[i]){
-++count;
-}
-if (count>maxCount){
-maxCount=count;
-maxValue =a[i];
-}}
-return maxValue;
-}
-int main() {
-int n;
-n= get_ int("Enter value of n:\n");
-  int a[n];
-for(int i=0;i<n;i++){
-a[i]= get_int( "number%i:",i);
-}
-printf("Mode is %d",mode(a,n));
-return 0;
-}
-5)#include <stdio.h>
-#include <cs50.h>
-Void Primefactors(int num){
-int count;
-for(count=0;num>1;count++){
-while(num%count==0){
-Printf("%d",count);
-num=num/count;
-}
-}
-Printf("\n");
-}
-int main() {
-int num;
-num=get_int("Enter value of n:");
 
-Printfactors(num);
-return 0;
-}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
